@@ -10,10 +10,17 @@
     <p>{{user.author}}</p>
     <p>{{user.price}}</p>
   </div> -->
-  <button class="btn btn-primary" (click)="getNames()">Get Names</button>
+  <button class="btn btn-primary" (click)="getNames()">Get Course Names</button>
+  <button class="btn btn-primary" (click)="addCourse()" style="margin-left: 1%">Add a course</button>
   <div *ngIf="showUser">
     <ul class="list-group" *ngFor="let usernames of userNames" >
-      <li class="list-group-item">{{usernames}}</li>
+      <div>
+          <li class="list-group-item">
+              {{usernames}}
+              <button class="btn btn-primary  dropdown pull-right" style="margin-bottom: 2%; size: 3" >Edit</button>
+            </li>
+      </div>
+     
     </ul>
   </div>
 
