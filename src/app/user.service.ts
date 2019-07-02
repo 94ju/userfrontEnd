@@ -7,11 +7,21 @@ export class UserService{
     constructor(private http:Http){}
 
     onGetUser(){
-        return this.http.get("http://localhost:3000/user").pipe(map(
+        return this.http.get("http://localhost:3000/users").pipe(map(
             (response:Response)=>{
                 const user =response.json();
                 return user;
             }
         )) 
+    }
+
+
+    onGetUsers(){
+        return this.http.get("http://localhost:3000/users").pipe(map(
+            (response:Response)=>{
+                const users=response.json();
+                return users;
+            }
+        ))
     }
 }

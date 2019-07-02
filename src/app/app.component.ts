@@ -18,7 +18,8 @@ export class AppComponent {
     isPublished:true,
     price:10,
     __v:0}]
- // user={}
+    userNames=[{}]
+    showUser=false;
     constructor(private userservice:UserService){}
 
     getUser(){
@@ -28,6 +29,17 @@ export class AppComponent {
           console.log(user)
         },
         (error)=>console.log(error)
+      )
+    }
+    getNames(){
+      this.showUser=true;
+      this.userservice.onGetUsers().subscribe(
+        (user)=>{
+          //this.users=user.name
+          const userNames=user.map(username=>username.name)
+          this.userNames=userNames
+          console.log(userNames)
+        }
       )
     }
     
