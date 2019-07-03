@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'userfrontend';
 
   users=[{
@@ -41,6 +42,20 @@ export class AppComponent {
           console.log(userNames)
         }
       )
+    }
+
+    userDetailForm:FormGroup
+    ngOnInit(){
+      this.userDetailForm=new FormGroup({
+        'tags':new FormControl(),
+        'date':new FormControl(),
+        'name':new FormControl(),
+        'author':new FormControl(),
+        'isPublished':new FormControl(),
+        'price':new FormControl()
+      })
+     
+
     }
     
 }
