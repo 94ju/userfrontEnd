@@ -54,8 +54,6 @@ export class AppComponent implements OnInit {
         'isPublished':new FormControl(),
         'price':new FormControl()
       })
-     
-
     }
     
 }

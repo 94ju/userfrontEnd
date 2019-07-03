@@ -4,10 +4,12 @@ import {HttpModule} from '@angular/http'
 import { AppComponent } from './app.component';
 import { UserService } from './user.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
