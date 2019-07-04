@@ -3,21 +3,18 @@
   <div class="row">
     <h1>Course details</h1>
     <hr>
-  <button class="btn btn-primary" (click)="getNames()">Get Course Names</button>
+  <button class="btn btn-primary" (click)="getNames()" routerLink="/coursename">Get Course Names</button>
   <button class="btn btn-primary" (click)="addCourse()" style="margin-left: 1%" routerLink="/user">Add a course</button>
-  <div *ngIf="showUser">
+  <!-- <div *ngIf="showUser">
     <ul class="list-group" *ngFor="let usernames of userNames" >
-     
           <li class="list-group list-group-flush">
               {{usernames}}
               <button class="btn btn-primary  dropdown pull-right" style="margin-left: 2%; size: 3" >Edit</button>
               <button class="btn btn-primary  dropdown pull-right" style="margin-left: 2%; size: 3" >Check</button>
               <button class="btn btn-primary  dropdown pull-right" style="margin-left: 2%; size: 3" >Delete</button>
             </li>
-      
-     
     </ul>
-  </div>
+  </div> -->
   <router-outlet></router-outlet>
     
   </div>

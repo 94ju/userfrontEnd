@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  users=[{}]
+  userNames=[{}]
+  showUser=false;
+  constructor(private userservice:UserService){}
+
+  getUser(){
+    this.userservice.onGetUser().subscribe(
+      (user)=>{
+        this.users=user;
+        console.log(user)
+      },
+      (error)=>console.log(error)
+    )
+  }
+  getNames(){
+    // this.showUser=true;
+    // this.userservice.onGetUsers().subscribe(
+    //   (user)=>{
+    //     //this.users=user.name
+    //     const userNames=user.map(username=>username.name)
+    //     this.userNames=userNames
+    //     console.log(userNames)
+    //   }
+    // )
+  }
 
   ngOnInit() {
+    this.showUser=true;
+    this.userservice.onGetUsers().subscribe(
+      (user)=>{
+        //this.users=user.name
+        const userNames=user.map(username=>username.name)
+        this.userNames=userNames
+        console.log(userNames)
+      }
+    )
   }
 
 }

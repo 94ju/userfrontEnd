@@ -9,7 +9,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { CoursesComponent } from './courses/courses.component';
 
 const appRoutes:Routes =[
-  { path:'user',component:UserEditComponent}
+  {path:'user',component:UserEditComponent},
+  {path:'coursename',component:CoursesComponent}
 ]
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ const appRoutes:Routes =[
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService],
+  providers: [UserService,CoursesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
