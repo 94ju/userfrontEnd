@@ -5,7 +5,11 @@ import { AppComponent } from './app.component';
 import { UserService } from './user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { Routes, RouterModule } from '@angular/router';
 
+const appRoutes:Routes =[
+  { path:'user',component:UserEditComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +18,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
   imports: [
     BrowserModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

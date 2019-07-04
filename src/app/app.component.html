@@ -3,15 +3,8 @@
   <div class="row">
     <h1>User details</h1>
     <hr>
-    <!-- <button class="btn btn-primary" (click)="getUser()">Get User</button>
-    <div *ngFor="let user of users">
-    <p>{{user.name}}</p>
-    <p>{{user.date}}</p>
-    <p>{{user.author}}</p>
-    <p>{{user.price}}</p>
-  </div> -->
   <button class="btn btn-primary" (click)="getNames()">Get Course Names</button>
-  <button class="btn btn-primary" (click)="addCourse()" style="margin-left: 1%">Add a course</button>
+  <button class="btn btn-primary" (click)="addCourse()" style="margin-left: 1%" routerLink="/user">Add a course</button>
   <div *ngIf="showUser">
     <ul class="list-group" *ngFor="let usernames of userNames" >
      
@@ -25,7 +18,7 @@
      
     </ul>
   </div>
-
+  <router-outlet></router-outlet>
     
   </div>
 </div>

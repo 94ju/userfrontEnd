@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-edit',
@@ -8,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class UserEditComponent implements OnInit {
 
   constructor() { }
-
+  userDetailForm:FormGroup
   ngOnInit() {
+    this.userDetailForm=new FormGroup({
+      'tags':new FormControl(),
+      'date':new FormControl(),
+      'name':new FormControl(),
+      'author':new FormControl(),
+      'isPublished':new FormControl(),
+      'price':new FormControl()
+    })
   }
 
 }

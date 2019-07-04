@@ -44,16 +44,9 @@ export class AppComponent implements OnInit {
       )
     }
 
-    userDetailForm:FormGroup
+   
     ngOnInit(){
-      this.userDetailForm=new FormGroup({
-        'tags':new FormControl(),
-        'date':new FormControl(),
-        'name':new FormControl(),
-        'author':new FormControl(),
-        'isPublished':new FormControl(),
-        'price':new FormControl()
-      })
+   
     }
     
 }
