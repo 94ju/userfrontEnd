@@ -6,6 +6,7 @@ import { UserService } from './user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CoursesComponent } from './courses/courses.component';
 
 const appRoutes:Routes =[
   { path:'user',component:UserEditComponent}
@@ -13,7 +14,8 @@ const appRoutes:Routes =[
 @NgModule({
   declarations: [
     AppComponent,
-    UserEditComponent
+    UserEditComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
