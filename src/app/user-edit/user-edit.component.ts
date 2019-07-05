@@ -20,5 +20,8 @@ export class UserEditComponent implements OnInit {
       'price':new FormControl()
     })
   }
+  onSubmit(){
+    console.log(this.userDetailForm)
+  }
 
 }
