@@ -9,6 +9,9 @@
         formControlName="tags"
         class="form-control"
         >
+        <span
+        *ngIf="!userDetailForm.get('tags').valid && userDetailForm.get('tags').touched"
+        class="help-block">Enter Valid Tag</span>
       </div>
 
         <div class="form-group">
