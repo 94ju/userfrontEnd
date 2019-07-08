@@ -24,4 +24,10 @@ export class UserService{
             }
         ))
     }
+    onsendCourse(courses:any){
+        const body=JSON.stringify(courses);
+        const headers = new Headers({ 'content-Type': 
+        'application/json'});
+        return this.http.post("http://localhost:3000/users",body);
+    }
 }

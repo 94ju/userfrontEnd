@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -8,11 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userservice:UserService) { }
   userDetailForm:FormGroup
   ngOnInit() {
     this.userDetailForm=new FormGroup({
-      'tags':new FormControl(null,Validators.required),
+      'tags':new FormArray([],Validators.required),
       'date':new FormControl(null,Validators.pattern("$$")),
       'name':new FormControl(),
       'author':new FormControl(),
@@ -21,7 +22,12 @@ export class UserEditComponent implements OnInit {
     })
   }
   onSubmit(){
-    console.log(this.userDetailForm)
+    console.log(this.userDetailForm.value)
+    this.userservice.onsendCourse(this.userDetailForm.value).subscribe(
+      (response)=>console.log(response),
+      (error)=>console.log(error)
+    )
+    
   }
 
 }
