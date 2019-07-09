@@ -13,8 +13,8 @@ export class UserEditComponent implements OnInit {
   userDetailForm:FormGroup
   ngOnInit() {
     this.userDetailForm=new FormGroup({
-      'tags':new FormArray([],Validators.required),
-      'date':new FormControl(null,Validators.pattern("$$")),
+      // 'tags':new FormArray([]),
+      // 'date':new FormControl(null,Validators.pattern("$$")),
       'name':new FormControl(),
       'author':new FormControl(),
       'isPublished':new FormControl(),

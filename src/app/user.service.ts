@@ -1,4 +1,4 @@
-import { Http,Response } from '@angular/http';
+import { Http,Response,Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
@@ -26,8 +26,10 @@ export class UserService{
     }
     onsendCourse(courses:any){
         const body=JSON.stringify(courses);
+        console.log(body )
         const headers = new Headers({ 'content-Type': 
         'application/json'});
-        return this.http.post("http://localhost:3000/users",body);
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post("http://localhost:3000/users",body,options);
     }
 }
